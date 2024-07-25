@@ -1,0 +1,223 @@
+/* styles.css */
+body {
+    font-family: 'Beltram Mono', monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.sidebar {
+    width: 30%;
+    max-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.profile-pic {
+    margin-top: 600px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display:grid;
+    margin: 0 auto 20px;
+}
+
+.contact-info a {
+    display: flex;
+    align-items: center;
+    margin-left: 80px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.contact-info a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.content {
+    margin-left: 30%;
+    width: 70%;
+    padding: 20px;
+}
+
+.topbar {
+    width: 100%;
+    background-color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 30%;
+    z-index: 1000;
+}
+
+.topbar a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.topbar a:hover {
+    color: #ce2227;
+}
+.download-cv {
+    position: fixed;
+    top: 5px; /* Adjust based on your preference */
+    right: calc(1cm + 10px); /* 5cm from the margin and 20px for the padding */
+    z-index: 1001;
+    padding: 5px 10px;
+    background-color: #a12b2b;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.download-cv:hover {
+    background-color:#000000e6;
+}
+section {
+    padding-top: 10px; /* Adjust based on the height of your topbar */
+    padding-bottom: 40px;
+}
+
+section .education-item,
+section .experience-item,
+section .project-item,
+section .award-item,
+section .volunteer-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #c42323;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color:#4e4e6a1d;
+    padding: 0px;
+    border-radius: 10px;}
+html {
+    scroll-behavior: smooth;
+}
+
+h2 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #275181;
+}
+
+h3 {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #275181;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+p, ul {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+li{
+    margin-bottom: 7px;
+}
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-column {
+    flex: 1;
+    min-width: 200px;
+    margin-right: 20px;
+}
+
+.skills-column ul {
+    margin-top: 5px;
+}
+
+.education-item h3 span,
+.experience-item h2 span,
+.project-item h2 span,
+.award-item h2 span,
+.volunteer-item h2 span {
+    margin-left: auto;
+    font-size: 0.9em;
+    color: #656565;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        max-width: none;
+        position: static;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .topbar {
+        left: 0;
+        padding: 10px;
+    }
+    
+    .contact-info a {
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar a {
+        margin-right: 10px;
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-size: 1.2em;
+    }
+    
+    h3 {
+        font-size: 1em;
+    }
+    
+    .skills-column {
+        min-width: 150px;
+        margin-right: 10px;
+    }
+}
