@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     font-family: 'Beltram Mono', monospace;
     margin: 0;
@@ -9,14 +8,16 @@ body {
 }
 
 .sidebar {
-    width: 30%;
-    max-width: 300px;
+    width: 22%;
     background-color: #fff;
     padding: 20px;
     position: fixed;
     height: 100%;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
 }
 
 .profile-pic {
@@ -24,14 +25,19 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    display:grid;
+    display: block;
     margin: 0 auto 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
 }
 
 .contact-info a {
     display: flex;
     align-items: center;
-    margin-left: 80px;
     margin-bottom: 10px;
     text-decoration: none;
     color: #333;
@@ -43,8 +49,8 @@ body {
 }
 
 .content {
-    margin-left: 30%;
-    width: 70%;
+    margin-left: 25%;
+    width: 75%;
     padding: 20px;
 }
 
@@ -55,7 +61,7 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
-    left: 30%;
+    left: 25%;
     z-index: 1000;
 }
 
@@ -68,6 +74,7 @@ body {
 .topbar a:hover {
     color: #ce2227;
 }
+
 .download-cv {
     position: fixed;
     top: 5px; /* Adjust based on your preference */
@@ -107,7 +114,9 @@ h1 {
     display: flex;
     background-color:#4e4e6a1d;
     padding: 0px;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -145,9 +154,11 @@ ul {
     list-style-type: square;
     padding-left: 20px;
 }
-li{
+
+li {
     margin-bottom: 7px;
 }
+
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -193,7 +204,6 @@ li{
     }
     
     .contact-info a {
-        margin-left: 0;
         justify-content: center;
     }
 }
