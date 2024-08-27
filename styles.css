@@ -145,6 +145,9 @@ h4 {
     margin-bottom: 10px;
     color: #000000;
 }
+p {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
 
 p, ul {
     margin-bottom: 20px;
