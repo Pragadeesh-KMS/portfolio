@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pragadeesh KMS</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.0/dist/vis-network.min.js"></script>
 </head>
 <body>
     <div class="sidebar">
@@ -49,63 +50,124 @@
                 <h4>S.K.V. Matriculation and Higher Secondary School, Namakkal<br style="float: right;">Percentage: 98.2%</h4>
             </div>
 
-            <h1>Skills</h1>
-            <div class="skills">
-                <div class="skills-column">
-                    <div>
-                        <h2>Languages</h2>
-                        <ul>
-                            <li>Python</li>
-                            <li>SQL</li>
-                            <li>Java</li>
-                            <li>Rust</li>
-                            <li>C++</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2>Area of Expertise</h2>
-                        <ul>
-                            <li>Machine Learning</li>
-                            <li>Generative AI</li>
-                            <li>Natural Language Processing (NLP)</li>
-                            <li>Computer Vision</li>
-                            <li>Deep Learning</li>
-                            <li>Reinforcement Learning</li>
 
-                        </ul>
-                    </div>
+            <h1>Skills</h1>
+            <div id="mynetwork"></div> 
+            
+            <script type="text/javascript">
+
+                var nodes = new vis.DataSet([
+                    // Main Categories
+                    { id: 1, label: 'Languages', color: '#ff7f23', font: { size: 20, color: '#ff69b4', background: '#000000' }, size: 20, group: 'main' },
+                    { id: 2, label: 'Area of Expertise', color: '#1e90aa', font: { size: 20, color: '#8a2be2', background: '#000000' }, size: 20, group: 'main' },
+                    { id: 3, label: 'Platforms', color: '#23cd43', font: { size: 20, color: '#7fff00', background: '#000000' }, size: 20, group: 'main' },
+                    { id: 4, label: 'Frameworks and Libraries', color: '#9370db', font: { size: 20, color: '#ff4500', background: '#000000' }, size: 20, group: 'main' },
                     
-                </div>
-                <div class="skills-column">
-                    <div>
-                        <h2>Platforms</h2>
-                        <ul>
-                            <li>Google Cloud Platform</li>
-                            <li>Microsoft Azure</li>
-                            <li>Hugging Face</li>
-                            <li>OpenAI Playground</li>
-                            <li>Amazon Web Services</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2>Frameworks and Libraries</h2>
-                        <ul>
-                            <li>TensorFlow</li>
-                            <li>PyTorch</li>
-                            <li>Keras</li>
-                            <li>Scikit-learn</li>
-                            <li>NumPy</li>
-                            <li>Pandas</li>
-                            <li>Matplotlib</li>
-                            <li>Seaborn</li>
-                            <li>OpenCV</li>
-                            <li>Matplotlib</li>
-                            <li>Transformers</li>
-                            <li>RAG</li>
-                            <li>Langchain</li>
-                        </ul>
-                    </div>
-                </div>
+                    // Languages
+                    { id: 5, label: 'Python', color: '#ffcc00', group: 'Languages', font: { color: '#000000'} },
+                    { id: 6, label: 'SQL', color: '#ffcc00', group: 'Languages', font: { color: '#000000'} },
+                    { id: 7, label: 'Java', color: '#ffcc00', group: 'Languages', font: { color: '#000000'} },
+                    { id: 8, label: 'Rust', color: '#ffcc00', group: 'Languages', font: { color: '#000000'} },
+                    { id: 9, label: 'C++', color: '#ffcc00', group: 'Languages', font: { color: '#000000'} },
+                    
+                    // Area of Expertise
+                    { id: 10, label: 'Machine Learning', color: '#8074ce', group: 'Expertise', font: { color: '#2bcb78' } },
+                    { id: 11, label: 'Generative AI', color: '#8074ce', group: 'Expertise', font: { color: '#2bcb78'} },
+                    { id: 12, label: 'NLP', color: '#8074ce', group: 'Expertise', font: { color: '#2bcb78'} },
+                    { id: 13, label: 'Computer Vision', color: '#8074ce', group: 'Expertise', font: { color: '#2bcb78'} },
+                    { id: 14, label: 'Deep Learning', color: '#8074ce', group: 'Expertise', font: { color: '#2bcb78'} },
+                    { id: 15, label: 'Reinforcement Learning', color: '#8074ce', group: 'Expertise', font: { color: '#2bcb78'} },
+                    
+                    // Platforms
+                    { id: 16, label: 'Google Cloud Platform', color: '#98fb98', group: 'Platforms', font: { color: '#0000ff' } },
+                    { id: 17, label: 'Microsoft Azure', color: '#98fb98', group: 'Platforms', font: { color: '#0000ff' } },
+                    { id: 18, label: 'Hugging Face', color: '#98fb98', group: 'Platforms', font: { color: '#0000ff' } },
+                    { id: 19, label: 'OpenAI Playground', color: '#98fb98', group: 'Platforms', font: { color: '#0000ff' } },
+                    { id: 20, label: 'Amazon Web Services', color: '#98fb98', group: 'Platforms', font: { color: '#0000ff' } },
+                    
+                    // Frameworks and Libraries
+                    { id: 21, label: 'TensorFlow', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 22, label: 'PyTorch', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 23, label: 'Keras', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 24, label: 'Scikit-learn', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 25, label: 'NumPy', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 26, label: 'Pandas', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 27, label: 'Matplotlib', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 28, label: 'Seaborn', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 29, label: 'OpenCV', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 30, label: 'Transformers', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 31, label: 'RAG', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } },
+                    { id: 32, label: 'Langchain', color: '#dda0dd', group: 'Libraries', font: { color: '#9370db' } }
+                ]);
+            
+                var edges = new vis.DataSet([
+                    // Languages connections
+                    { from: 1, to: 5 }, { from: 1, to: 6 }, { from: 1, to: 7 }, { from: 1, to: 8 }, { from: 1, to: 9 },
+                    
+                    // Area of Expertise connections
+                    { from: 2, to: 10 }, { from: 2, to: 11 }, { from: 2, to: 12 }, { from: 2, to: 13 }, { from: 2, to: 14 }, { from: 2, to: 15 },
+                    
+                    // Platforms connections
+                    { from: 3, to: 16 }, { from: 3, to: 17 }, { from: 3, to: 18 }, { from: 3, to: 19 }, { from: 3, to: 20 },
+                    
+                    // Frameworks and Libraries connections
+                    { from: 4, to: 21 }, { from: 4, to: 22 }, { from: 4, to: 23 }, { from: 4, to: 24 }, { from: 4, to: 25 },
+                    { from: 4, to: 26 }, { from: 4, to: 27 }, { from: 4, to: 28 }, { from: 4, to: 29 }, { from: 4, to: 30 },
+                    { from: 4, to: 31 }, { from: 4, to: 32 },
+            
+                    // Minimal semantic connections to avoid congestion
+                    { from: 5, to: 10 }, // Python to Machine Learning
+                    { from: 11, to: 18 }, // Generative AI to Hugging Face
+                    { from: 22, to: 13 }, // PyTorch to Computer Vision
+                    { from: 29, to: 13 }, // OpenCV to Computer Vision
+                    { from: 5, to: 24 }, // Python to Scikit-learn
+                    { from: 19, to: 11 }  // OpenAI Playground to Generative AI
+                ]);
+            
+                var container = document.getElementById('mynetwork');
+                var data = {
+                    nodes: nodes,
+                    edges: edges
+                };
+                var options = {
+                    physics: {
+                        enabled: true,
+                        hierarchicalRepulsion: {
+                            nodeDistance: 220,
+                            centralGravity: 0.005,
+                            springLength: 300,
+                            springConstant: 0.01,
+                            damping: 0.09
+                        },
+                        stabilization: { iterations: 150 }
+                    },
+                    layout: {
+                        improvedLayout: true
+                    },
+                    nodes: {
+                        shape: 'dot',
+                        size: 10,
+                        font: {
+                            size: 18,
+                            color: '#ffffff'
+                        },
+                        borderWidth: 2
+                    },
+                    edges: {
+                        width: 2,
+                        color: '#cccccc',
+                        smooth: {
+                            type: 'continuous'
+                        }
+                    },
+                    interaction: {
+                        zoomView: false, 
+    }
+                };
+            
+                var network = new vis.Network(container, data, options);
+            </script>
+            
                 
         </section>
 
