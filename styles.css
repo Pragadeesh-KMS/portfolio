@@ -6,7 +6,16 @@ body {
     background-color: #f0f0f0;
     color: #333;
 }
-
+#mynetwork {
+    width: 100%;
+    height: 700px; 
+    max-width: calc(100% - 20px);
+    border: 1px solid lightgray; 
+    background-color: #f0f0f0;
+    margin-bottom: 40px;
+    overflow: hidden; 
+    position: relative; 
+}
 .sidebar {
     width: 22%;
     background-color: #fff;
@@ -17,7 +26,7 @@ body {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
+    align-items: center; 
 }
 
 .profile-pic {
@@ -32,7 +41,7 @@ body {
 .contact-info {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
+    align-items: center; 
 }
 
 .contact-info a {
@@ -77,8 +86,8 @@ body {
 
 .download-cv {
     position: fixed;
-    top: 5px; /* Adjust based on your preference */
-    right: calc(1cm + 10px); /* 5cm from the margin and 20px for the padding */
+    top: 5px; 
+    right: calc(1cm + 10px); 
     z-index: 1001;
     padding: 5px 10px;
     background-color: #a12b2b;
@@ -89,7 +98,7 @@ body {
     background-color:#000000e6;
 }
 section {
-    padding-top: 10px; /* Adjust based on the height of your topbar */
+    padding-top: 10px; 
     padding-bottom: 40px;
 }
 
